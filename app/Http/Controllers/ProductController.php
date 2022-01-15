@@ -28,7 +28,7 @@ class ProductController extends Controller
         if(count($products) > 0) {
             return response(['products' => ProductResource::collection($products), 'message' => 'Filtered succesfully'], 200);
         } else {
-            return response(['message' => 'Not found']);
+            return response(['message' => 'Not found'], 404);
         }
     }
 
